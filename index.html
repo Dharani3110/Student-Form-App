@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="registration-wrapper">
+            <div class="card registration-card">
+                <div class="card__header">
+                    <h1>Student Registration Form</h1>
+                    <p class="form-description">Please fill in all the required information to register a new student.</p>
+                </div>
+                
+                <div class="card__body">
+                    <!-- Message Area -->
+                    <div id="messageArea" class="message-area hidden">
+                        <div id="messageContent" class="message-content"></div>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <form id="registrationForm" class="registration-form">
+                        <div class="form-group">
+                            <label for="studentName" class="form-label">
+                                Student Name <span class="required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="studentName" 
+                                name="studentName" 
+                                class="form-control" 
+                                placeholder="Enter student's full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rollNo" class="form-label">
+                                Roll Number <span class="required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="rollNo" 
+                                name="rollNo" 
+                                class="form-control" 
+                                placeholder="Enter roll number"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studentClass" class="form-label">
+                                Class <span class="required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="studentClass" 
+                                name="studentClass" 
+                                class="form-control" 
+                                placeholder="Enter class (e.g., 10th Grade, BSc Computer Science)"
+                                required
+                            >
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn btn--primary btn--full-width">
+                            <span class="btn-text">Register Student</span>
+                            <span class="btn-loading hidden">
+                                <span class="loading-spinner"></span>
+                                Submitting...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card__footer">
+                    <p class="footer-note">
+                        <span class="required">*</span> All fields are required
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
